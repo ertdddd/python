@@ -21,7 +21,7 @@ headers={
 url=input("请输入音乐网址：")
 url_1=url+'s'
 print("正在获取歌曲信息.....")
-hash=re.findall('/#hash=(.*?)&',url_1)[0]
+hash=re.findall('#hash=(.*?)&',url_1)[0]
 album_id=re.findall('&album_id=(.*?)s',url_1)[0]
 song_url=f"https://wwwapi.kugou.com/yy/index.php?r=play/getdata&hash={hash}&dfid=4XTDlO0Tjyl827K26B2JOWFJ&appid=1014&mid=36cafbb62a65fbbc7ab3480162172741&platid=4&album_id={album_id}&_=1649986632571"
 response=requests.get(headers=headers,url=song_url).json()
